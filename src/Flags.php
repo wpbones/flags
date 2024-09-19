@@ -133,4 +133,16 @@ class Flags
   {
     return $this->flags($key, $default);
   }
+
+  /**
+   * Set the path to the flags file.
+   *
+   * @param string $path The path to the flags file.
+   *
+   * @return $this
+   */
+  private function callabeWithPath($path)
+  {
+    return $this->withPath($path);
+  }
 }

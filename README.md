@@ -1,6 +1,5 @@
 # Flags for WP Bones
 
-
 [![Latest Stable Version](https://poser.pugx.org/wpbones/flags/v/stable)](https://packagist.org/packages/wpbones/flags)
 [![Total Downloads](https://poser.pugx.org/wpbones/flags/downloads)](https://packagist.org/packages/wpbones/flags)
 [![License](https://poser.pugx.org/wpbones/flags/license)](https://packagist.org/packages/wpbones/flags)
@@ -8,13 +7,11 @@
 Flags for [WP Bones](https://wpbones.vercel.app) is a PHP package designed for the WP Bones framework, allowing you to enable or disable features in plugins using [YAML](https://yaml.org/) configuration files.
 This approach simplifies feature management and makes the plugin more flexible and easy to configure, even for non-technical users.
 
-
 ## Key features
  - Enable and Disable Features: Using flags, you can easily activate or deactivate specific plugin features.
  - YAML Configuration: YAML files are easy to read and modify, and can be used to configure various plugin options.
  - Flexibility: The path and name of the YAML file can be customized through the plugin configuration.
-	•	Reusability: The same YAML file can be used across different plugins, improving code consistency and maintenance.
-
+ - Reusability: The same YAML file can be used across different plugins, improving code consistency and maintenance.
 
 ## Installation
 
@@ -48,16 +45,6 @@ and run
 composer install
 ```
 
-## Why use Flags instead the PHP code?
-
-Flags is able to read the [YAML](https://yaml.org/) files:
-
-- It's easier to understand and modify
-- You can provide this file to your clients or users, and they can easily change the behavior of the plugin
-- You can use the same file in different plugins
-- The path and name of the file can be changed in the plugin configuration
-- You could use one or more [YAML](https://yaml.org/) files in the plugin
-
 ## YAML file example
 
 ```yaml
@@ -90,9 +77,69 @@ config/flags.yaml
 You can set the path and filename in the plugin configuration by adding the following line in the `config/plugin.php` file of your plugin:
 
 ```php
-    'flags' => [
-        'path' => 'config/flags.yaml',
-    ],
+<?php
+
+if (!defined('ABSPATH')) {
+    exit();
+}
+
+return [
+  /*
+  |--------------------------------------------------------------------------
+  | Logging Configuration
+  |--------------------------------------------------------------------------
+  |
+  | Here you may configure the log settings for your plugin.
+  |
+  | Available Settings: "single", "daily", "errorlog".
+  |
+  | Set to false or 'none' to stop logging.
+  |
+  */
+
+  'log' => 'errorlog',
+
+  'log_level' => 'debug',
+
+  /*
+  |--------------------------------------------------------------------------
+  | Flags package path Configuration
+  |--------------------------------------------------------------------------
+  |
+  | Here you may configure the flags path for your plugin.
+  |
+  */
+  'flags' => [
+      'path' => 'config/flags.yaml',
+  ],
+  ...
+```
+
+## Basic usage
+
+You can use the `wpbones_flags` helper function to get the value of a flag:
+
+```php
+wpbones_flags()->get('example.enabled', false);
+```
+
+The first parameter is the flag name, and the second parameter is the default value if the flag is not found.
+
+You may also use the class directly:
+
+```php
+use WpBones\Flags\Flags;
+
+$flags = new Flags();
+$flags->get('example.enabled', false);
+```
+
+or by using the static method:
+
+```php
+use WpBones\Flags\Flags;
+
+Flags::get('example.enabled', false);
 ```
 
 ### Set the flags path by method
@@ -100,14 +147,31 @@ You can set the path and filename in the plugin configuration by adding the foll
 You may also set/change the path by using:
 
 ```php
-    wpbones_flags('config/flags.yaml')->get('logger.enabled', false);
+wpbones_flags('config/flags.yaml')->get('logger.enabled', false);
 ```
 
 or the fluent method `withPath`:
 
 ```php
-    wpbones_flags()->withPath('config/flags.yaml')->get('logger.enabled', false);
+wpbones_flags()->withPath('config/flags.yaml')->get('logger.enabled', false);
 ```
 
-## Basic usage
+by using the class directly:
+
+```php
+use WpBones\Flags\Flags;
+
+$flags = new Flags();
+$flags->withPath('config/flags.yaml')->get('logger.enabled', false);
+```
+
+or by using the static method:
+
+```php
+use WpBones\Flags\Flags;
+
+Flags::withPath('config/flags.yaml')->get('logger.enabled', false);
+```
+
+
 
