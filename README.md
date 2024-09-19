@@ -3,23 +3,23 @@
 <p align="center">
 
   <a href="https://packagist.org/packages/wpbones/flags">
-   <img src="https://poser.pugx.org/wpbones/flags/v/stable" alt="Latest Stable Version" />
+   <img src="https://poser.pugx.org/wpbones/flags/v/stable?style=for-the-badge" alt="Latest Stable Version" />
   </a>
 
   <a href="https://packagist.org/packages/wpbones/flags">
-   <img src="https://poser.pugx.org/wpbones/flags/v/unstable" alt="Latest Unstable Version" />
+   <img src="https://poser.pugx.org/wpbones/flags/v/unstable?style=for-the-badge" alt="Latest Unstable Version" />
   </a>
 
   <a href="https://packagist.org/packages/wpbones/flags">
-   <img src="https://poser.pugx.org/wpbones/flags/downloads" alt="Total Downloads" />
+   <img src="https://poser.pugx.org/wpbones/flags/downloads?style=for-the-badge" alt="Total Downloads" />
   </a>
 
   <a href="https://packagist.org/packages/wpbones/flags">
-   <img src="https://poser.pugx.org/wpbones/flags/license" alt="License" />
+   <img src="https://poser.pugx.org/wpbones/flags/license?style=for-the-badge" alt="License" />
   </a>
 
   <a href="https://packagist.org/packages/wpbones/flags">
-   <img src="https://poser.pugx.org/wpbones/flags/d/monthly" alt="Monthly Downloads" />
+   <img src="https://poser.pugx.org/wpbones/flags/d/monthly?style=for-the-badge" alt="Monthly Downloads" />
   </a>
 
 </p>
