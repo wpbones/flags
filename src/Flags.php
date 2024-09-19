@@ -2,6 +2,8 @@
 
 namespace WPKirk\Flags;
 
+use Symfony\Component\Yaml\Yaml;
+
 class Flags
 {
 
