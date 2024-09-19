@@ -1,11 +1,5 @@
 # Flags for WP Bones
 
-[![Latest Stable Version](http://poser.pugx.org/wpbones/flags/v)](https://packagist.org/packages/wpbones/flags)
-[![Total Downloads](http://poser.pugx.org/wpbones/flags/downloads)](https://packagist.org/packages/wpbones/flags)
-[![Latest Unstable Version](http://poser.pugx.org/wpbones/flags/v/unstable)](https://packagist.org/packages/wpbones/flags)
-[![License](http://poser.pugx.org/wpbones/flags/license)](https://packagist.org/packages/wpbones/flags)
-[![PHP Version Require](http://poser.pugx.org/wpbones/flags/require/php)](https://packagist.org/packages/wpbones/flags)
-
 <p align="center">
 
   <a href="https://packagist.org/packages/wpbones/flags">
