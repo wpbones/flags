@@ -1,8 +1,10 @@
 # Flags for WP Bones
 
-[![Latest Stable Version](https://poser.pugx.org/wpbones/flags/v/stable)](https://packagist.org/packages/wpbones/flags)
-[![Total Downloads](https://poser.pugx.org/wpbones/flags/downloads)](https://packagist.org/packages/wpbones/flags)
-[![License](https://poser.pugx.org/wpbones/flags/license)](https://packagist.org/packages/wpbones/flags)
+[![Latest Stable Version](http://poser.pugx.org/wpbones/flags/v)](https://packagist.org/packages/wpbones/flags)
+[![Total Downloads](http://poser.pugx.org/wpbones/flags/downloads)](https://packagist.org/packages/wpbones/flags)
+[![Latest Unstable Version](http://poser.pugx.org/wpbones/flags/v/unstable)](https://packagist.org/packages/wpbones/flags)
+[![License](http://poser.pugx.org/wpbones/flags/license)](https://packagist.org/packages/wpbones/flags)
+[![PHP Version Require](http://poser.pugx.org/wpbones/flags/require/php)](https://packagist.org/packages/wpbones/flags)
 
 Flags for [WP Bones](https://wpbones.vercel.app) is a PHP package designed for the WP Bones framework, allowing you to enable or disable features in plugins using [YAML](https://yaml.org/) configuration files.
 This approach simplifies feature management and makes the plugin more flexible and easy to configure, even for non-technical users.
