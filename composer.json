@@ -1,0 +1,30 @@
+{
+  "name": "wpbones/flags",
+  "homepage": "https://github.com/wpbones/flags",
+  "license": "MIT",
+  "type": "library",
+  "description": "Flags for WP Bones",
+  "keywords": [
+    "features",
+    "flags",
+    "WP Bones"
+  ],
+  "authors": [
+    {
+      "name": "Giovambattista Fazioli",
+      "email": "giovambattista.fazioli@gmail.com",
+      "homepage": "https://wpbones.vercel.app/docs/Packages/official-packages"
+    }
+  ],
+  "support": {
+    "email": "giovambattista.fazioli@gmail.com",
+    "issues": "https://github.com/wpbones/flags/issues"
+  },
+  "autoload": {
+    "psr-4": {
+      "WPKirk\\Flags\\": "src/"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
