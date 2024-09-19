@@ -10,10 +10,10 @@ if (!function_exists('wpbones_flags')) {
    * wpbones_flags()->get('flag', 'value');
    *
    *
-   * @return WPKirk\Flags\FlagsProvider
+   * @return WPKirk\Flags\Flags
    */
-  function wpbones_flags()
+  function wpbones_flags($path = '')
   {
-    return WPKirk\Flags\FlagsProvider::init();
+    return new WPKirk\Flags\Flags($path);
   }
 }

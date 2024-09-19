@@ -1,10 +1,20 @@
 # Flags for WP Bones
 
-Geo Localizer provides a set of utilities to manage geolocation for WordPress/WP Bones
 
 [![Latest Stable Version](https://poser.pugx.org/wpbones/flags/v/stable)](https://packagist.org/packages/wpbones/flags)
 [![Total Downloads](https://poser.pugx.org/wpbones/flags/downloads)](https://packagist.org/packages/wpbones/flags)
 [![License](https://poser.pugx.org/wpbones/flags/license)](https://packagist.org/packages/wpbones/flags)
+
+Flags for [WP Bones](https://wpbones.vercel.app) is a PHP package designed for the WP Bones framework, allowing you to enable or disable features in plugins using [YAML](https://yaml.org/) configuration files.
+This approach simplifies feature management and makes the plugin more flexible and easy to configure, even for non-technical users.
+
+
+## Key features
+ - Enable and Disable Features: Using flags, you can easily activate or deactivate specific plugin features.
+ - YAML Configuration: YAML files are easy to read and modify, and can be used to configure various plugin options.
+ - Flexibility: The path and name of the YAML file can be customized through the plugin configuration.
+	•	Reusability: The same YAML file can be used across different plugins, improving code consistency and maintenance.
+
 
 ## Installation
 
@@ -38,7 +48,66 @@ and run
 composer install
 ```
 
+## Why use Flags instead the PHP code?
+
+Flags is able to read the [YAML](https://yaml.org/) files:
+
+- It's easier to understand and modify
+- You can provide this file to your clients or users, and they can easily change the behavior of the plugin
+- You can use the same file in different plugins
+- The path and name of the file can be changed in the plugin configuration
+- You could use one or more [YAML](https://yaml.org/) files in the plugin
+
+## YAML file example
+
+```yaml
+# The version of the file is 1.0.0
+version: "1.0.0"
+example:
+  # Enable or disable the Example feature
+  enabled: true
+  # Throttle request time in minutes
+  # By setting this value to 0, the feature will be disabled
+  throttle: 5
+  # Request timeout
+  timeout: 0
+```
+
+You can find more information about the YAML syntax in the [Symfony documentation](https://symfony.com/doc/current/components/yaml.html).
+
 ## YAML file configuration path
 
-## Create the YAML file
+You can creare your own YAML file everywhere in your plugin, but I suggest to create it in the `config` directory of your plugin.
+
+The default path and filename is:
+
+```sh
+config/flags.yaml
+```
+
+### Set the flags path in the plugin configuration
+
+You can set the path and filename in the plugin configuration by adding the following line in the `config/plugin.php` file of your plugin:
+
+```php
+    'flags' => [
+        'path' => 'config/flags.yaml',
+    ],
+```
+
+### Set the flags path by method
+
+You may also set/change the path by using:
+
+```php
+    wpbones_flags('config/flags.yaml')->get('logger.enabled', false);
+```
+
+or the fluent method `withPath`:
+
+```php
+    wpbones_flags()->withPath('config/flags.yaml')->get('logger.enabled', false);
+```
+
+## Basic usage
 
