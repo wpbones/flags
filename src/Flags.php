@@ -56,7 +56,7 @@ class Flags
     }
 
     try {
-      $flags_file = "{$this->plugin->getBasePath()}/{$this->path}";
+      $flags_file = "{$this->plugin->basePath}/{$this->path}";
 
       if (function_exists('yaml_parse_file')) {
         $this->flags = yaml_parse_file($flags_file);

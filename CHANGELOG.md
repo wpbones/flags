@@ -1,5 +1,9 @@
 # Release Notes for 1.x
 
+## 1.0.3 - September 24, 2024
+
+- Minor alignments for WP Bones 1.6
+
 ## 1.0.2 - September 19, 2024
 
 ### ✨ Added
