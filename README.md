@@ -24,7 +24,7 @@
 
 </p>
 
-Flags for [WP Bones](https://wpbones.vercel.app) is a PHP package designed for the WP Bones framework, allowing you to enable or disable features in plugins using [YAML](https://yaml.org/) configuration files.
+Flags for [WP Bones](https://wpbones.com) is a PHP package designed for the WP Bones framework, allowing you to enable or disable features in plugins using [YAML](https://yaml.org/) configuration files.
 This approach simplifies feature management and makes the plugin more flexible and easy to configure, even for non-technical users.
 
 ## Key features
