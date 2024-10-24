@@ -1,28 +1,14 @@
 # Flags for WP Bones
 
-<p align="center">
+<div align="center">
 
-  <a href="https://packagist.org/packages/wpbones/flags">
-   <img src="https://poser.pugx.org/wpbones/flags/v/stable?style=for-the-badge" alt="Latest Stable Version" />
-  </a>
+[![Latest Stable Version](https://poser.pugx.org/wpbones/flags/v/stable?style=for-the-badge)](https://packagist.org/packages/wpbones/flags) &nbsp;
+[![Latest Unstable Version](https://poser.pugx.org/wpbones/flags/v/unstable?style=for-the-badge)](https://packagist.org/packages/wpbones/flags) &nbsp;
+[![Total Downloads](https://poser.pugx.org/wpbones/flags/downloads?style=for-the-badge)](https://packagist.org/packages/wpbones/flags) &nbsp;
+[![License](https://poser.pugx.org/wpbones/flags/license?style=for-the-badge)](https://packagist.org/packages/wpbones/flags) &nbsp;
+[![Monthly Downloads](https://poser.pugx.org/wpbones/flags/d/monthly?style=for-the-badge)](https://packagist.org/packages/wpbones/flags)
 
-  <a href="https://packagist.org/packages/wpbones/flags">
-   <img src="https://poser.pugx.org/wpbones/flags/v/unstable?style=for-the-badge" alt="Latest Unstable Version" />
-  </a>
-
-  <a href="https://packagist.org/packages/wpbones/flags">
-   <img src="https://poser.pugx.org/wpbones/flags/downloads?style=for-the-badge" alt="Total Downloads" />
-  </a>
-
-  <a href="https://packagist.org/packages/wpbones/flags">
-   <img src="https://poser.pugx.org/wpbones/flags/license?style=for-the-badge" alt="License" />
-  </a>
-
-  <a href="https://packagist.org/packages/wpbones/flags">
-   <img src="https://poser.pugx.org/wpbones/flags/d/monthly?style=for-the-badge" alt="Monthly Downloads" />
-  </a>
-
-</p>
+</div>
 
 Flags for [WP Bones](https://wpbones.com) is a PHP package designed for the WP Bones framework, allowing you to enable or disable features in plugins using [YAML](https://yaml.org/) configuration files.
 This approach simplifies feature management and makes the plugin more flexible and easy to configure, even for non-technical users.
