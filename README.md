@@ -41,7 +41,7 @@ You may also to add `"wpbones/flags": "~0.7"` in the `composer.json` file of you
   "require": {
     "php": ">=7.4.0",
     "wpbones/wpbones": "~1.5",
-    "wpbones/flags": "~0.7"
+    "wpbones/flags": "~1.1"
   },
 ```
 
@@ -134,7 +134,7 @@ The first parameter is the flag name, and the second parameter is the default va
 You may also use the class directly:
 
 ```php
-use WpBones\Flags\Flags;
+use WPKirk\Flags\Flags;
 
 $flags = new Flags();
 $flags->get('example.enabled', false);
@@ -143,7 +143,7 @@ $flags->get('example.enabled', false);
 or by using the static method:
 
 ```php
-use WpBones\Flags\Flags;
+use WPKirk\Flags\Flags;
 
 Flags::get('example.enabled', false);
 ```
@@ -165,7 +165,7 @@ wpbones_flags()->withPath('config/flags.yaml')->get('logger.enabled', false);
 by using the class directly:
 
 ```php
-use WpBones\Flags\Flags;
+use WPKirk\Flags\Flags;
 
 $flags = new Flags();
 $flags->withPath('config/flags.yaml')->get('logger.enabled', false);
@@ -174,7 +174,7 @@ $flags->withPath('config/flags.yaml')->get('logger.enabled', false);
 or by using the static method:
 
 ```php
-use WpBones\Flags\Flags;
+use WPKirk\Flags\Flags;
 
 Flags::withPath('config/flags.yaml')->get('logger.enabled', false);
 ```

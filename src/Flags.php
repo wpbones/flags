@@ -105,8 +105,29 @@ class Flags
   }
 
   /**
-   * @param $name   string  Name of the method
-   * @param $arguments      Arguments passed to the method
+   * Magic method to call flags methods.
+   *
+   * @param string $method The method name.
+   * @param array $arguments The arguments passed to the method.
+   *
+   * @return $this
+   */
+  public function __call($method, $arguments)
+  {
+    $method = "callable" . ucfirst($method);
+
+    if (method_exists($this, $method)) {
+      return call_user_func_array([$this, $method], $arguments);
+    }
+
+    return $this;
+  }
+
+  /**
+   * Magic method to call flags methods.
+   *
+   * @param string $name The method name.
+   * @param array $arguments The arguments passed to the method.
    *
    * @return mixed
    */
@@ -132,6 +153,11 @@ class Flags
    * @return mixed
    */
   private function callableGet($key, $default = null)
+  {
+    return $this->flags($key, $default);
+  }
+
+  private function callableFlags($key, $default = null)
   {
     return $this->flags($key, $default);
   }
