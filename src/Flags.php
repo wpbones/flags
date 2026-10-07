@@ -4,6 +4,17 @@ namespace WPKirk\Flags;
 
 use Symfony\Component\Yaml\Yaml;
 
+/**
+ * Feature flags read from a YAML file of the plugin, `config/flags.yaml` by default.
+ *
+ * get(), flags() and withPath() work both on an instance and statically: `wpbones_flags()->get()`,
+ * `$flags->withPath()->get()`, `Flags::get()`, `Flags::withPath()->get()`. They are magic so that
+ * one name serves both forms: PHP refuses to call a declared instance method statically.
+ *
+ * @method mixed get(string $key, mixed $default = null) The value at a dot-separated key, e.g. 'database.host'.
+ * @method mixed flags(string $key, mixed $default = null) The same as get().
+ * @method $this withPath(string $path) Read the flags from another file of the plugin.
+ */
 class Flags
 {
 
@@ -69,20 +80,6 @@ class Flags
   }
 
   /**
-   * Set the path to the flags file.
-   *
-   * @param string $path The path to the flags file.
-   *
-   * @return $this
-   */
-  public function withPath($path)
-  {
-    $this->path = $path;
-    $this->initFlags();
-    return $this;
-  }
-
-  /**
    * Get a flags value.
    *
    * @param string $key The dot-separated key. E.g. 'database.host'
@@ -90,7 +87,7 @@ class Flags
    *
    * @return mixed
    */
-  public function flags(string $key, $default = null)
+  private function value(string $key, $default = null)
   {
     $flags = $this->flags;
     $keys = explode('.', $key);
@@ -154,12 +151,12 @@ class Flags
    */
   private function callableGet($key, $default = null)
   {
-    return $this->flags($key, $default);
+    return $this->value($key, $default);
   }
 
   private function callableFlags($key, $default = null)
   {
-    return $this->flags($key, $default);
+    return $this->value($key, $default);
   }
 
   /**
@@ -169,8 +166,11 @@ class Flags
    *
    * @return $this
    */
-  private function callabeWithPath($path)
+  private function callableWithPath($path)
   {
-    return $this->withPath($path);
+    $this->path = $path;
+    $this->initFlags();
+
+    return $this;
   }
 }
