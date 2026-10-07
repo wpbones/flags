@@ -35,13 +35,13 @@ You can use composer to install this package:
 composer require wpbones/flags
 ```
 
-You may also to add `"wpbones/flags": "~0.7"` in the `composer.json` file of your plugin:
+You may also to add `"wpbones/flags": "^1.0"` in the `composer.json` file of your plugin:
 
 ```json
   "require": {
-    "php": ">=7.4.0",
-    "wpbones/wpbones": "~1.5",
-    "wpbones/flags": "~1.1"
+    "php": ">=8.1",
+    "wpbones/wpbones": "^3.0",
+    "wpbones/flags": "^1.0"
   },
 ```
 
